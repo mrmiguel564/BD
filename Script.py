@@ -40,7 +40,7 @@ else:
 tableName="Trabajador"
 
 try:                                             #columnas para modificar mysql lenguaje
-    mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(50) Primary KEY, dia_de_paga VARCHAR(50))")
+    mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(20) Primary KEY, dia_de_paga VARCHAR(10), sueldo int)")
 except:
     print("tabla "+tableName+" ya estaba Creada")
 else:
