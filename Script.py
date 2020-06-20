@@ -40,7 +40,7 @@ else:
 tableName="Trabajador"
 
 try:                                             #columnas para modificar mysql lenguaje
-    mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(20) Primary KEY, dia_de_paga VARCHAR(10), sueldo int)")
+    mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(20) Primary KEY, dia_de_paga VARCHAR(10), sueldo INT)")
 except:
     print("tabla "+tableName+" ya estaba Creada")
 else:
@@ -77,6 +77,15 @@ tableName="Correo"
 
 try:                                             #columnas para modificar mysql lenguaje
     mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(50) Primary KEY, correo VARCHAR(50))")
+except:
+    print("tabla "+tableName+" ya estaba Creada")
+else:
+    print("tabla "+tableName+" Creada")
+#---------------------------------------------
+tableName="Poliza"
+
+try:                                             #columnas para modificar mysql lenguaje
+    mycursor.execute("CREATE TABLE"+tableName+" (numero_de_poliza  VARCHAR(10) Primary KEY, rut_beneficiario VARCHAR(30), rut_asegurado VARCHAR(30), fecha_de_pago VARCHAR(30), monto de pago INT, fecha_vencimiento VARCHAR(30), fecha_contratacion VARCHAR(30), vigencia BOOL)")
 except:
     print("tabla "+tableName+" ya estaba Creada")
 else:
