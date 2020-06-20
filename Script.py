@@ -28,13 +28,3 @@ except:
 else:
 	print("tabla "+tableName+" Creada")
 #---------------------------------------------
-#---------------------------------------------
-tableName="Cliente"
-
-try:                                             #columnas para modificar mysql lenguaje
-    mycursor.execute("CREATE TABLE"+tableName+" (rut  VARCHAR(50) Primary KEY, fondo_de_salud VARCHAR(50))")
-except:
-    print("tabla "+tableName+" ya estaba Creada")
-else:
-    print("tabla "+tableName+" Creada")
-#---------------------------------------------
