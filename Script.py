@@ -109,3 +109,12 @@ except:
 else:
     print("tabla "+tableName+" Creada")
 #---------------------------------------------
+tableName="Poliza_de_Vida_Entera"
+
+try:                                             #columnas para modificar mysql lenguaje
+    mycursor.execute("CREATE TABLE"+tableName+" (numero_de_poliza  VARCHAR(10) Primary KEY, edad_maxima_permanencia INT)")
+except:
+    print("tabla "+tableName+" ya estaba Creada")
+else:
+    print("tabla "+tableName+" Creada")
+#---------------------------------------------
