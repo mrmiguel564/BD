@@ -49,7 +49,7 @@ else:
 tableName="Surcursal"
 
 try:                                             #columnas para modificar mysql lenguaje
-    mycursor.execute("CREATE TABLE"+tableName+" (name_surcursal  VARCHAR(50) Primary KEY, telefono VARCHAR(50))")
+    mycursor.execute("CREATE TABLE"+tableName+" (nombre_surcursal  VARCHAR(30) Primary KEY, telefono VARCHAR(30), ubicacion VARCHAR(30))")
 except:
     print("tabla "+tableName+" ya estaba Creada")
 else:
