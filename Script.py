@@ -24,20 +24,18 @@ except:
 tableName="Persona" 		
 
 try:										 	#columnas para modificar mysql lenguaje https://www.w3schools.com/python/python_mysql_create_table.asp
-	mycursor.execute("CREATE TABLE " +tableName+" (rut  VARCHAR(20) Primary KEY, nombre VARCHAR(30), estado_civil VARCHAR(30), fecha_nacimiento VARCHAR(30), genero VARCHAR(30)")
+	mycursor.execute("CREATE TABLE "+tableName+" (rut  VARCHAR(20) Primary KEY, nombre VARCHAR(30), estado_civil VARCHAR(30), fecha_nacimiento VARCHAR(30), telefono VARCHAR(30), correo VARCHAR(30), genero VARCHAR(30), enfermedades_cronicas VARCHAR(30))")
+	print("tabla "+tableName+" Creada")
 except:
-    print("tabla "+tableName+" ya estaba Creada")
-else:
-    print("tabla "+tableName+" Creada")
+	print("tabla "+tableName+" ya estaba Creada")
 #---------------------------------------------
 tableName="Cliente"
 
 try:                                             #columnas para modificar mysql lenguaje
     mycursor.execute("CREATE TABLE "+tableName+" (rut  VARCHAR(50) Primary KEY, fondo_de_salud VARCHAR(50))")
+    print("tabla "+tableName+" Creada")
 except:
     print("tabla "+tableName+" ya estaba Creada")
-else:
-    print("tabla "+tableName+" Creada")
 #---------------------------------------------
 tableName="Trabajador"
 
@@ -51,7 +49,7 @@ else:
 tableName="Surcursal"
 
 try:                                             #columnas para modificar mysql lenguaje
-    mycursor.execute("CREATE TABLE "+tableName+" (nombre_surcursal VARCHAR(30) Primary KEY, telefono VARCHAR(30), ubicacion VARCHAR(30))")
+    mycursor.execute("CREATE TABLE "+tableName+" (nombre_surcursal  VARCHAR(30) Primary KEY, telefono VARCHAR(30), ubicacion VARCHAR(30))")
 except:
     print("tabla "+tableName+" ya estaba Creada")
 else:
