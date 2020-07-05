@@ -1,19 +1,27 @@
-create database seguros_de_vida;
+1)	create database seguros_de_vida;
 
-use seguros_de_vida;
+2)	use seguros_de_vida;
 
-create table persona(rut varchar(20) not null primary key, nombre varchar(30) not null, estado_civil varchar(10) not null, fecha_nacimiento date not null, genero varchar(10) not null, oficio varchar(20) not null);
+3)	create table persona(rut varchar(20) not null primary key, nombre varchar(30) not null, estado_civil varchar(10) not null, fecha_nacimiento date not null, genero varchar(10) not null, oficio varchar(20) not null);
 
-create table enfermedades_cronicas(rut varchar(20) not null, enfermedades_cronicas text, foreign key (rut) references persona(rut) on update cascade on delete cascade);
+4)	create table enfermedades_cronicas(rut varchar(20) not null, enfermedades_cronicas text, foreign key (rut) references persona(rut) on update cascade on delete cascade);
 
-create table correo(rut varchar(20) not null, correo varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
+5)	create table correo(rut varchar(20) not null, correo varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
 
-create table telefono(rut varchar(20) not null, telefono varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
+6)	create table telefono(rut varchar(20) not null, telefono varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
 
-create table domicilio(rut varchar(20) not null primary key, numero_calle int not null, provincia varchar (50) not null, comuna varchar(50) not null, numero_block int, calle text not null, foreign key (rut) references persona(rut) on update cascade on delete cascade);
+7)	create table domicilio(rut varchar(20) not null primary key, numero_calle int not null, provincia varchar (50) not null, comuna varchar(50) not null, numero_block int, calle text not null, foreign key (rut) references persona(rut) on update cascade on delete cascade);
 
-create table trabajador(rut varchar(20) not null primary key, sueldo int not null default 300000, dia_de_paga int not null default 5,foreign key (rut) references persona(rut) on update cascade on delete cascade);
+8)	create table trabajador(rut varchar(20) not null primary key, sueldo int not null default 300000, dia_de_paga int not null default 5,foreign key (rut) references persona(rut) on update cascade on delete cascade);
 
-create table sucursal(nombre varchar(10) not null primary key, ubicacion varchar(40) not null);
+9)	create table sucursal(nombre varchar(10) not null primary key, ubicacion varchar(40) not null);
 
-create table telefono_sucursal(nombre varchar(10) not null, area varchar(20), telefono int, foreign key (nombre) references sucursal(nombre) on update cascade on delete cascade);
+10)	create table telefono_sucursal(nombre varchar(10) not null, area varchar(20), telefono int, foreign key (nombre) references sucursal(nombre) on update cascade on delete cascade);
+
+11)	create table poliza(numero_de_poliza int not null primary key, rut_del_beneficiario varchar(20) not null, fecha_paga date not null, monto_cobro_mensual int default 5000, monto_pago_beneficiario int default 10000);
+
+12)	create table asegurado(rut varchar(20) not null, numero_de_poliza int not null, primary key(rut,numero_de_poliza), foreign key (rut) references cliente(rut) on update cascade on delete cascade, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+13)	create table vigencia_poliza(numero_de_poliza int not null, fecha_contratacion date not null, fecha_vencimiento date not null, vigencia boolean default true, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+14)	create table cuenta(numero_de_poliza int not null, morosidad boolean default false, balance_cuenta int default 0,foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
