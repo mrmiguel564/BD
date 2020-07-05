@@ -50,7 +50,7 @@
 
 26)	create table causas(id_causa int primary key AUTO_INCREMENT, nombre varchar(20) not null, descripcion varchar (500) not null);
 
-27)	create table asignacion_causas(numero_de_poliza int not null, id_causa int AUTO_INCREMENT, primary key (id_causa), foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+27) create table asignacion_causas(numero_de_poliza int not null, id_causa int not null , foreign key (id_causa) references causas(id_causa), foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
 
 28)	exit;
 
