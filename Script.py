@@ -7,7 +7,6 @@ User="root"
 
 mydb = mysql.connector.connect(host=Ip,user=User,password=Passwd)
 mycursor = mydb.cursor()
-
 #---------------------------------------------
 NombreBD="seguros_vida"
 try:
@@ -19,7 +18,6 @@ except:
 	mydb = mysql.connector.connect(host=Ip,user=User,password=Passwd,database=NombreBD)
 	mycursor = mydb.cursor()
 	print("BD "+NombreBD+" ya estaba Creada")
-
 #---------------------------------------------
 tablas=(
 	(('persona',		)	,"rut  VARCHAR(20) PRIMARY KEY, nombre VARCHAR(30), estado_civil VARCHAR(30) , fecha_nacimiento VARCHAR(30) , genero VARCHAR(30))"),
@@ -61,7 +59,6 @@ for y in variables:
 	i=i+1
 
 """
-
 sql = "INSERT INTO Persona (rut, nombre, estado_civil, fecha_nacimiento, genero) VALUES (%s, %s, %s, %s, %s)"
 val = [
   ('Peter', 'Lowstreet 4', 'Lowstreet 4', 'Lowstreet 4', 'Lowstreet 4'),
@@ -82,4 +79,3 @@ mycursor.executemany(sql, val)
 
 mydb.commit()
 """
-
