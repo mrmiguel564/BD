@@ -55,12 +55,16 @@ insert into correo values 	('17.256.111-5','garcia45ivan@outlook.com')
 insert into correo values 	('21.654.571-7','alvarezNASA@gmail.com')
 insert into correo values 	('21.344.857-K','contacto.mercenarios@gmail.com')
 
-
 insert into domicilio values 	('20.765.123-5',64,'Valparaíso','Quintero',262,'Orella')
 insert into domicilio values 	('21.358.816-2',8,'Valparaíso','Viña del Mar',656,'El Palo Santo')
 insert into domicilio values 	('20.453.912-6',22,'Valparaíso','Valparaíso',113,'Las Palmas')
 insert into domicilio values 	('18.675.115-K',17,'Valparaíso','Viña del Mar',137,'Las Sillas')
 insert into domicilio values 	('19.334.121-3',5,'Valparaíso','Puchuncaví',:753,'Los Salmones')
+insert into domicilio values 	('20.746.378-7',75,'Valparaíso','Viña del Mar',:234,'Los Altos')
+insert into domicilio values 	('19.466.904-3',34,'Valparaíso','Quintero',:533,'San Ragnarok')
+insert into domicilio values 	('17.256.111-5',11,'Valparaíso','Puchuncaví',:223,'Grieta del Invocador')
+insert into domicilio values 	('21.654.571-7',69,'Valparaíso','Viña del Mar',:121,'San Martin')
+insert into domicilio values 	('21.344.857-K',32,'Valparaíso','Valparaíso',:878,'Los Bajos')
 
 insert into telefono values 	('20.765.123-5',45423566)
 insert into telefono values 	('21.358.816-2',85435354)
