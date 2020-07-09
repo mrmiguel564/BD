@@ -1,0 +1,57 @@
+1)	create database seguros_de_vida;
+
+2)	use seguros_de_vida;
+
+3)	create table persona(rut varchar(20) not null primary key, nombre varchar(30) not null, estado_civil varchar(10) not null, fecha_nacimiento date not null, genero varchar(10) not null, oficio varchar(20) not null);
+
+4)	create table enfermedades_cronicas(rut varchar(20) not null, enfermedades_cronicas text, foreign key (rut) references persona(rut) on update cascade on delete cascade);
+
+5)	create table correo(rut varchar(20) not null, correo varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
+
+6)	create table telefono(rut varchar(20) not null, telefono varchar(50), foreign key (rut) references persona(rut) on update cascade on delete cascade);
+
+7)	create table domicilio(rut varchar(20) not null primary key, numero_calle int not null, provincia varchar (50) not null, comuna varchar(50) not null, numero_block int, calle text not null, foreign key (rut) references persona(rut) on update cascade on delete cascade);
+
+8)	create table trabajador(rut varchar(20) not null primary key, sueldo int not null default 300000, dia_de_paga int not null default 5,foreign key (rut) references persona(rut) on update cascade on delete cascade);
+
+9)	create table sucursal(nombre varchar(10) not null primary key, ubicacion varchar(40) not null);
+
+10)	create table telefono_sucursal(nombre varchar(10) not null, area varchar(20), telefono int, foreign key (nombre) references sucursal(nombre) on update cascade on delete cascade);
+
+11)	create table poliza(numero_de_poliza int not null primary key, rut_del_beneficiario varchar(20) not null, fecha_paga date not null, monto_cobro_mensual int default 5000, monto_pago_beneficiario int default 10000);
+
+12)	create table asegurado(rut varchar(20) not null, numero_de_poliza int not null, primary key(rut,numero_de_poliza), foreign key (rut) references cliente(rut) on update cascade on delete cascade, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+13)	create table vigencia_poliza(numero_de_poliza int not null, fecha_contratacion date not null, fecha_vencimiento date not null, vigencia boolean default true, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+14)	create table cuenta(numero_de_poliza int not null, morosidad boolean default false, balance_cuenta int default 0,foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+15)	create table facturas(numero_de_poliza int not null, numero_De_factura int AUTO_INCREMENT primary key, fecha date not null, foreign key (numero_de_poliza) references cuenta(numero_de_poliza) on update cascade on delete cascade);
+
+16)	create table retiro(numero_de_retiro int default 0, numero_de_factura int AUTO_INCREMENT, monto_de_retiro int default 5000, primary key(numero_de_factura));
+
+17)	alter table retiro add constraint retiro_fk_numero_de_factura foreign key (numero_de_factura) REFERENCES facturas(numero_de_factura) on update cascade on delete cascade;
+
+18)	 create table deposito(numero_de_factura int AUTO_INCREMENT primary key, monto int default 5000, banco varchar(30) not null, cuenta_origen int not null);
+
+19)	alter table deposito add constraint deposito_fk_numero_de_factura foreign key (numero_de_factura) REFERENCES facturas(numero_de_factura) on update cascade on delete cascade;
+
+20)	create table cobro_mensual(cargo_mensual int default 5000, numero_de_factura int AUTO_INCREMENT primary key);
+
+21)	alter table cobro_mensual add constraint cobro_mensual_fk_numero_de_factura foreign key (numero_de_factura) REFERENCES facturas(numero_de_factura) on update cascade on delete cascade;
+
+22)	create table invalidez(numero_de_poliza int not null, id_acta_invalidez int AUTO_INCREMENT primary key, FOREIGN KEY (numero_de_poliza) REFERENCES poliza(numero_de_poliza) ON DELETE CASCADE ON UPDATE CASCADE);
+
+23)	create table supervivencia(numero_de_poliza int not null, edad_min_retiro int default 65, numero_de_retiros_parciales_anuales int default 12, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+24)	create table muerte(numero_de_poliza int not null, id_acta_defuncion int AUTO_INCREMENT primary key, edad_max int default 85, foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+25)	create table flexible(numero_de_poliza int not null, monto_de_retiro_parcial int default 5000, numero_de_retiros_paciales_anuales int default 12, minimo_años_permanecia int default 1, foreign key(numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+26)	create table causas(id_causa int primary key AUTO_INCREMENT, nombre varchar(20) not null, descripcion varchar (500) not null);
+
+27)	create table asignacion_causas(numero_de_poliza int not null, id_causa int not null , foreign key (id_causa) references causas(id_causa), foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
+
+28)	exit;
+
+29)	mysqldump -u root -p seguros_de_vida > directorio\seguros_de_vida.sql
