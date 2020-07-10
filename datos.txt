@@ -1,97 +1,99 @@
-insert into persona VALUES 	('20.765.123-5', 'Juanito Soto', 'Casado', '01/05/1976', 'M', 'Plomero')
-insert into persona VALUES 	('21.358.816-2', 'Roberto Guzman', 'Soltero', '23/10/1969', 'M', 'Primer Ministro')
-insert into persona VALUES 	('20.453.912-6', 'Pamela De Juan', 'Soltera', '05/12/2001', 'F', 'Estudiante')
-insert into persona VALUES 	('18.675.115-K', 'Carlos Rivera', 'Casado', '30/07/1915', 'M', 'Zapatero')
-insert into persona VALUES 	('19.334.121-3', 'Pepe Gonzalez', 'Casado', '03/01/1976', 'M', 'Guardia')
-insert into persona VALUES 	('20.746.378-7', 'Sebas Tian', 'Casado', '07/07/1995', 'M', 'Vendedor de Seguros')
-insert into persona VALUES 	('19.466.904-3', 'Susana Soto', 'Soltera', '12/03/1999', 'F', 'Vendedora de Seguros')
-insert into persona VALUES 	('17.256.111-5', 'Ivan Garcia', 'Viudo', '30/05/1989', 'M', 'Guardia')
-insert into persona VALUES 	('21.654.571-7', 'Carmela Alvarez', 'Soltera', '21/09/1989', 'F', 'Astronauta')
-insert into persona VALUES 	('21.344.857-K', 'Lillia Navarro', 'Viuda', '01/12/2000', 'F', 'Mercenaria')
+insert into persona VALUES 	('20.765.123-5', 'Juanito Soto', 'Casado', '1976-01-05', 'M', 'Plomero');
+insert into persona VALUES 	('21.358.816-2', 'Roberto Guzman', 'Soltero', '1969-10-01', 'M', 'Primer Ministro');
+insert into persona VALUES 	('20.453.912-6', 'Pamela De Juan', 'Soltera', '2001-12-05', 'F', 'Estudiante');
+insert into persona VALUES 	('18.675.115-K', 'Carlos Rivera', 'Casado', '1915-07-10, 'M', 'Zapatero');
+insert into persona VALUES 	('19.334.121-3', 'Pepe Gonzalez', 'Casado', '2076-01-03', 'M', 'Guardia');
+insert into persona VALUES 	('20.746.378-7', 'Sebas Tian', 'Casado', '1995-07-07', 'M', 'Vendedor de Seguros');
+insert into persona VALUES 	('19.466.904-3', 'Susana Soto', 'Soltera', '1999-05-11', 'F', 'Vendedora de Seguros');
+insert into persona VALUES 	('17.256.111-5', 'Ivan Garcia', 'Viudo', '1989-05-04', 'M', 'Guardia');
+insert into persona VALUES 	('21.654.571-7', 'Carmela Alvarez', 'Soltera', '1989-09-01', 'F', 'Astronauta');
+insert into persona VALUES 	('21.344.857-K', 'Lillia Navarro', 'Viuda', '2000-12-01', 'F', 'Mercenaria');
 
-insert into cliente VALUES 	('20.765.123-5', 'Fonasa')
-insert into cliente VALUES 	('21.358.816-2', 'Fonasa')
-insert into cliente VALUES 	('20.453.912-6', 'Isapre')
-insert into cliente VALUES 	('18.675.115-K', 'Isapre')
-insert into cliente VALUES 	('19.334.121-3', 'Fonasa')
-insert into cliente VALUES 	('20.746.378-7', 'Isapre')
-insert into cliente VALUES 	('21.654.571-7', 'Fonasa')
-insert into cliente VALUES 	('21.344.857-K', 'Fonasa')
+insert into cliente VALUES 	('20.765.123-5', 'Fonasa');
+insert into cliente VALUES 	('21.358.816-2', 'Fonasa');
+insert into cliente VALUES 	('20.453.912-6', 'Isapre');
+insert into cliente VALUES 	('18.675.115-K', 'Isapre');
+insert into cliente VALUES 	('19.334.121-3', 'Fonasa');
+insert into cliente VALUES 	('20.746.378-7', 'Isapre');
+insert into cliente VALUES 	('21.654.571-7', 'Fonasa');
+insert into cliente VALUES 	('21.344.857-K', 'Fonasa');
 
-insert into asegurado 	 VALUES  ('20.765.123-5',935)
-insert into asegurado 	 VALUES  ('18.675.115-K',115)
+insert into poliza 	 VALUES 	(935,'20.453.912-6','2020-12-5',10000,1000000);
+insert into poliza 	 VALUES 	(115,'21.358.816-2','2020-11-3',20000,3300000);
 
-insert into poliza 	 VALUES 	(935,'20.453.912-6','5/12/2020',10000,1000000)
-insert into poliza 	 VALUES 	(115,'21.358.816-2','3/11/2020',20000,3300000)
+insert into asegurado 	 VALUES  ('20.765.123-5',935);
+insert into asegurado 	 VALUES  ('18.675.115-K',115);
 
-insert into trabajador  VALUES	('19.334.121-3',300000,3)
-insert into trabajador  VALUES	('20.746.378-7',650000,4)
-insert into trabajador  VALUES	('19.466.904-3',650000,6)
-insert into trabajador  VALUES	('17.256.111-5',300000,1)
+insert into trabajador  VALUES	('19.334.121-3',300000,3);
+insert into trabajador  VALUES	('20.746.378-7',650000,4);
+insert into trabajador  VALUES	('19.466.904-3',650000,6);
+insert into trabajador  VALUES	('17.256.111-5',300000,1);
 
-insert into asignacion 	VALUES 	('19.334.121-3','Aseguradora 2x1')
-insert into asignacion 	VALUES 	('20.746.378-7','Aseguradora 2x1')
-insert into asignacion 	VALUES 	('19.466.904-3','Aseguradora todo a luca')
-insert into asignacion 	VALUES 	('20.746.378-7','Aseguradora todo a luca')
+insert into sucursal values ('Aseguradora 2x1','Av. Shangri-La 234, en la esquina, Viña del Mar, Valparaiso');
+insert into sucursal values ('Aseguradora todo a luca','Av. Libertad 935, Viña del Mar, Valparaíso');
 
-insert into sucursal values ('Aseguradora 2x1','Av. Shangri-La 234, en la esquina, Viña del Mar, Valparaiso')
+insert into asignacion 	VALUES 	('19.334.121-3','Aseguradora 2x1');
+insert into asignacion 	VALUES 	('20.746.378-7','Aseguradora 2x1');
+insert into asignacion 	VALUES 	('19.466.904-3','Aseguradora todo a luca');
+insert into asignacion 	VALUES 	('20.746.378-7','Aseguradora todo a luca');
 
-insert into nombre values ('Aseguradora todo a luca','Av. Libertad 935, Viña del Mar, Valparaíso')
+insert into telefono_sucursal values ('Aseguradora 2x1','+32',57478657);
+insert into telefono_sucursal values ('Aseguradora todo a luca','+32',24596708);
 
-insert into telefono_sucursal values ('Aseguradora 2x1','+32',57478657)
-insert into telefono_sucursal values ('Aseguradora todo a luca','+32',24596708)
+insert into enfermedades_cronicas values ( '20.765.123-5','Esquizofrenia paranoide');
+insert into enfermedades_cronicas values ( '18.675.115-K','Alzheimer');
 
-insert into enfermedades_cronicas values ( '20.765.123-5','Esquizofrenia paranoide')
-insert into enfermedades_cronicas values ( '18.675.115-K','Alzheimer')
+insert into correo values 	('20.765.123-5','juanito.soto@gmail.com');
+insert into correo values 	('21.358.816-2','elmejorministro@hotmail.com');
+insert into correo values 	('20.453.912-6','Pamelita89@gmail.com');
+insert into correo values 	('18.675.115-K','carlosrivera1915@yahoo.com');
+insert into correo values 	('19.334.121-3','Pepepepe33@hotmail.com');
+insert into correo values 	('20.746.378-7','sebastianKFC@hotmail.com');
+insert into correo values 	('19.466.904-3','susanita1999@gmail.com');
+insert into correo values 	('17.256.111-5','garcia45ivan@outlook.com');
+insert into correo values 	('21.654.571-7','alvarezNASA@gmail.com');
+insert into correo values 	('21.344.857-K','contacto.mercenarios@gmail.com');
 
-insert into correo values 	('20.765.123-5','juanito.soto@gmail.com')
-insert into correo values 	('21.358.816-2','elmejorministro@hotmail.com')
-insert into correo values 	('20.453.912-6','Pamelita89@gmail.com')
-insert into correo values 	('18.675.115-K','carlosrivera1915@yahoo.com')
-insert into correo values 	('19.334.121-3','Pepepepe33@hotmail.com')
-insert into correo values 	('20.746.378-7','sebastianKFC@hotmail.com')
-insert into correo values 	('19.466.904-3','susanita1999@gmail.com')
-insert into correo values 	('17.256.111-5','garcia45ivan@outlook.com')
-insert into correo values 	('21.654.571-7','alvarezNASA@gmail.com')
-insert into correo values 	('21.344.857-K','contacto.mercenarios@gmail.com')
+insert into domicilio values 	('20.765.123-5',64,'Valparaíso','Quintero',262,'Orella');
+insert into domicilio values 	('21.358.816-2',8,'Valparaíso','Viña del Mar',656,'El Palo Santo');
+insert into domicilio values 	('20.453.912-6',22,'Valparaíso','Valparaíso',113,'Las Palmas');
+insert into domicilio values 	('18.675.115-K',17,'Valparaíso','Viña del Mar',137,'Las Sillas');
+insert into domicilio values 	('19.334.121-3',5,'Valparaíso','Puchuncaví',:753,'Los Salmones');
+insert into domicilio values 	('20.746.378-7',75,'Valparaíso','Viña del Mar',:234,'Los Altos');
+insert into domicilio values 	('19.466.904-3',34,'Valparaíso','Quintero',:533,'San Ragnarok');
+insert into domicilio values 	('17.256.111-5',11,'Valparaíso','Puchuncaví',:223,'Grieta del Invocador');
+insert into domicilio values 	('21.654.571-7',69,'Valparaíso','Viña del Mar',:121,'San Martin');
+insert into domicilio values 	('21.344.857-K',32,'Valparaíso','Valparaíso',:878,'Los Bajos');
 
-insert into domicilio values 	('20.765.123-5',64,'Valparaíso','Quintero',262,'Orella')
-insert into domicilio values 	('21.358.816-2',8,'Valparaíso','Viña del Mar',656,'El Palo Santo')
-insert into domicilio values 	('20.453.912-6',22,'Valparaíso','Valparaíso',113,'Las Palmas')
-insert into domicilio values 	('18.675.115-K',17,'Valparaíso','Viña del Mar',137,'Las Sillas')
-insert into domicilio values 	('19.334.121-3',5,'Valparaíso','Puchuncaví',:753,'Los Salmones')
-insert into domicilio values 	('20.746.378-7',75,'Valparaíso','Viña del Mar',:234,'Los Altos')
-insert into domicilio values 	('19.466.904-3',34,'Valparaíso','Quintero',:533,'San Ragnarok')
-insert into domicilio values 	('17.256.111-5',11,'Valparaíso','Puchuncaví',:223,'Grieta del Invocador')
-insert into domicilio values 	('21.654.571-7',69,'Valparaíso','Viña del Mar',:121,'San Martin')
-insert into domicilio values 	('21.344.857-K',32,'Valparaíso','Valparaíso',:878,'Los Bajos')
+insert into telefono values 	('20.765.123-5',45423566);
+insert into telefono values 	('21.358.816-2',85435354);
+insert into telefono values 	('20.453.912-6',13452354);
+insert into telefono values 	('18.675.115-K',78563265);
+insert into telefono values 	('19.334.121-3',25612654);
+insert into telefono values 	('20.746.378-7',50923598);
+insert into telefono values 	('19.466.904-3',87545634);
+insert into telefono values 	('17.256.111-5',53463655);
+insert into telefono values 	('21.654.571-7',63634554);
+insert into telefono values 	('21.344.857-K',21467847);
 
-insert into telefono values 	('20.765.123-5',45423566)
-insert into telefono values 	('21.358.816-2',85435354)
-insert into telefono values 	('20.453.912-6',13452354)
-insert into telefono values 	('18.675.115-K',78563265)
-insert into telefono values 	('19.334.121-3',25612654)
-insert into telefono values 	('20.746.378-7',50923598)
-insert into telefono values 	('19.466.904-3',87545634)
-insert into telefono values 	('17.256.111-5',53463655)
-insert into telefono values 	('21.654.571-7',63634554)
-insert into telefono values 	('21.344.857-K',21467847)
+insert into vigencia_poliza values 	(935,'1990-12-05','2020-12-30',true);
+insert into vigencia_poliza values 	(115, '2005-11-3', '2020-11-30', true);
 
-insert into vigencia_poliza values 	(935,'5/12/1999','30/12/2020',true)
-insert into vigencia_poliza values 	(115, '3/11/2005', '30/11/2020', true)
+insert into cuenta (numero_de_poliza) values (935);
+insert into cuenta (numero_de_poliza) values (115);
 
-insert into facturas values 	(935, 67364, '16/11/2020')
-insert into facturas values 	(115, 86525, '29/10/2020')
+insert into facturas values 	(935, 1, '2019-02-20');
+insert into facturas values 	(115, 2, '2019-03-30');
 
-insert into retiro values 	(23, 67364, 10000)
-insert into retiro values 	(47, 86525, 20000)
+insert into retiro values 	(23, 1, 10000);
+insert into retiro values 	(47, 2, 20000);
 
-insert into cobro_mensual values	(67364, 10000)
-insert into cobro_mensual values 	(86525, 20000)
+insert into cobro_mensual values	(10000,1);
+insert into cobro_mensual values 	(20000,2);
 
-insert into deposito values 	(67364, 'BancoEstado', 10000, 45753463)
-insert into deposito values		(67364, 'Banco Santander', 20000, 30484845)
+insert into deposito values 	(1,10000,'BancoEstado',45753463);
+insert into deposito values		(2,20000,'Banco Santander',30484845);
 
-insert into flexible values		(935,30000,6,4)
+insert into flexible values		(935,30000,6,4);
 
-insert into supervivencia values (115,80,8)
+insert into supervivencia values (115,80,8);
