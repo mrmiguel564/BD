@@ -97,3 +97,4 @@ insert into deposito values		(2,20000,'Banco Santander',30484845);
 insert into flexible values		(935,30000,6,4);
 
 insert into supervivencia values (115,80,8);
+

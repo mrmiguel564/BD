@@ -26,9 +26,9 @@
 
 14)	create table cuenta(numero_de_poliza int not null, morosidad boolean default false, balance_cuenta int default 0,foreign key (numero_de_poliza) references poliza(numero_de_poliza) on update cascade on delete cascade);
 
-15)	create table facturas(numero_de_poliza int not null, numero_De_factura int AUTO_INCREMENT primary key, fecha date not null, foreign key (numero_de_poliza) references cuenta(numero_de_poliza) on update cascade on delete cascade);
+15)	create table facturas(numero_de_poliza int not null, numero_De_factura int primary key, fecha date not null, foreign key (numero_de_poliza) references cuenta(numero_de_poliza) on update cascade on delete cascade);
 
-16)	create table retiro(numero_de_retiro int default 0, numero_de_factura int AUTO_INCREMENT, monto_de_retiro int default 5000, primary key(numero_de_factura));
+16)	create table retiro(numero_de_retiro int default 0, numero_de_factura int not null, monto_de_retiro int default 5000, primary key(numero_de_retiro, numero_de_factura), FOREIGN KEY (numero_de_factura) REFERENCES facturas (numero_de_factura) ON DELETE CASCADE ON UPDATE CASCADE);
 
 17)	alter table retiro add constraint retiro_fk_numero_de_factura foreign key (numero_de_factura) REFERENCES facturas(numero_de_factura) on update cascade on delete cascade;
 
