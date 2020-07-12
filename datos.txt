@@ -21,10 +21,12 @@ insert into cliente VALUES 	('21.344.857-K', 'Fonasa');
 insert into poliza 	 VALUES 	(935,'20.453.912-6','2020-12-5',10000,1000000);
 insert into poliza 	 VALUES 	(115,'21.358.816-2','2020-11-3',20000,3300000);
 insert into poliza 	 VALUES 	(264,'21.344.857-K','2020-08-2',52000,5000000);
+insert into poliza 	 VALUES 	(43,'19.466.904-3','2020-05-10',34000,6700000);
 
 insert into asegurado 	 VALUES  ('20.765.123-5',935);
 insert into asegurado 	 VALUES  ('18.675.115-K',115);
 insert into asegurado 	 VALUES  ('21.654.571-7',264);
+insert into asegurado 	 VALUES  ('20.746.378-7',43);
 
 insert into trabajador  VALUES	('19.334.121-3',300000,3);
 insert into trabajador  VALUES	('20.746.378-7',650000,4);
@@ -45,6 +47,7 @@ insert into telefono_sucursal values ('Aseguradora todo a luca','+32',24596708);
 insert into enfermedades_cronicas values ( '20.765.123-5','Esquizofrenia paranoide');
 insert into enfermedades_cronicas values ( '18.675.115-K','Alzheimer');
 insert into enfermedades_cronicas values ( '21.654.571-7','Autismo');
+insert into enfermedades_cronicas values ( '21.654.571-7','Diabetes');
 
 insert into correo values 	('20.765.123-5','juanito.soto@gmail.com');
 insert into correo values 	('21.358.816-2','elmejorministro@hotmail.com');
@@ -82,30 +85,43 @@ insert into telefono values 	('21.344.857-K',21467847);
 insert into vigencia_poliza values 	(935,'1990-12-05','2020-12-30',true);
 insert into vigencia_poliza values 	(115, '2005-11-03', '2020-11-30', true);
 insert into vigencia_poliza values 	(264, '2002-07-17', '2020-12-25', true);
+insert into vigencia_poliza values 	(43, '2000-04-23', '2020-12-20', true);
 
 insert into cuenta (numero_de_poliza) values (935);
 insert into cuenta (numero_de_poliza) values (115);
 insert into cuenta (numero_de_poliza) values (264);
+insert into cuenta (numero_de_poliza) values (43);
 
 insert into facturas values 	(935, 1, '2019-02-20');
 insert into facturas values 	(115, 2, '2019-03-30');
 insert into facturas values 	(264, 3, '2018-02-25');
+insert into facturas values 	(43, 4, '2018-01-12');
 
 insert into retiro values 	(23, 1, 10000);
 insert into retiro values 	(47, 2, 20000);
 insert into retiro values 	(22, 3, 55000);
+insert into retiro values 	(10, 4, 34000);
 
 insert into cobro_mensual values	(10000,1);
 insert into cobro_mensual values 	(20000,2);
 insert into cobro_mensual values 	(55000,3);
+insert into cobro_mensual values 	(34000,4);
 
 insert into deposito values 	(1,10000,'BancoEstado',45753463);
 insert into deposito values		(2,20000,'Banco Santander',30484845);
 insert into deposito values		(3,55000,'BancoEstado',65565443);
+insert into deposito values		(4,34000,'Banco Santander',76565454);
 
 insert into flexible values		(935,30000,6,4);
 
 insert into supervivencia values (115,80,8);
 
+insert into invalidez values (43,646);
+
 insert into muerte values (264,'87F59K3',80);
 
+insert into asignacion_causas values (264,1);
+insert into asignacion_causas values (43,22);
+
+insert into causas values (1,'Cascada de resonancia','Desaparicion prolongada dentro de una cascada de resonancia');
+insert into causas values (22,'Accidente automovilistico','Invalidez debido a un accidente automovilistico');
