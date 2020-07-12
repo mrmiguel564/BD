@@ -9,11 +9,11 @@ insert into cliente VALUES 	('21.358.816-2', 'Fonasa');
 insert into cliente VALUES 	('20.453.912-6', 'Isapre');
 insert into cliente VALUES 	('18.675.115-K', 'Isapre');
 
-insert into poliza	 VALUES 	(935,'20.453.912-6','2020-05-12',10000,1000000);
-insert into poliza 	 VALUES 	(115,'21.358.816-2','2020-03-11',20000,3300000);
+insert into poliza VALUES (935,'20.453.912-6','2020-05-12',10000,1000000);
+insert into poliza VALUES (115,'21.358.816-2','2020-03-11',20000,3300000);
 
-insert into asegurado 	 VALUES  ('20.765.123-5',935);
-insert into asegurado 	 VALUES  ('18.675.115-K',115);
+insert into asegurado VALUES ('20.765.123-5',935);
+insert into asegurado VALUES ('18.675.115-K',115);
 
 insert into trabajador (rut, sueldo) VALUES	('19.334.121-3', 300000);
 
